@@ -8,7 +8,7 @@ import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
 
-import { StyledTetrisWrapper,StyledTetris } from './styles/StyledTetris';
+import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
 
 const Tetris = () => {
     const [dropTime, setDropTime] = useState(null);

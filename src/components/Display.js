@@ -2,7 +2,7 @@ import React from 'react';
 import {StyledDisplay} from './styles/StyledDisplay'
 
 
-const Display = ({ gaveOver, text }) => (
+const Display = ({ gameover, text }) => (
     <StyledDisplay>{text}</StyledDisplay>
 )
 
