@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 
 import { createStage } from '../gameHelpers';
 
-const useStage = (player, resetPlayer) => {
-    const [stage, setStage] = useState(createStage());
 
+export const useStage = (player, resetPlayer) => {
+    const [stage, setStage] = useState(createStage());
     useEffect(() =>{
         const updateStage = prevStage => {
-            console.log(prevStage)
             const newStage = prevStage.map(row => 
                 row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
                 )
@@ -35,5 +34,3 @@ const useStage = (player, resetPlayer) => {
 
     return [stage, setStage];
 }
-
-export default useStage;

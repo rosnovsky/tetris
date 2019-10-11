@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import usePlayer from '../hooks/usePlayer';
-import useStage from '../hooks/useStage';
+import {usePlayer} from '../hooks/usePlayer';
+import {useStage} from '../hooks/useStage';
 
 import { createStage, checkCollision } from '../gameHelpers'
 
@@ -15,9 +15,8 @@ const Tetris = () => {
     const [gameover, setGameover] = useState(false)
 
     const [player, updatePlayerPosition, resetPlayer] = usePlayer();
-    const [stage, setStage] = useStage(player);
+    const [stage, setStage] = useStage(player, resetPlayer);
 
-    console.log("re-render")
 
     const movePlayer = direction => {
         if(!checkCollision(player, stage, {x: direction, y: 0})){
@@ -58,7 +57,6 @@ const Tetris = () => {
                 dropPlayer()
             }
         }
-
     }
 
 
